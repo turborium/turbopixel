@@ -82,7 +82,6 @@ $turbopixel-theme: mat.define-dark-theme((
 html { 
   height: 100%;
   width: 100%;
-  overflow: hidden;
   margin: 0;
   padding: 0;
 }
@@ -93,58 +92,23 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-}
-/*
-https://css-tricks.com/sliding-nightmare-understanding-range-input/
-*/
-
-/*
-::-webkit-slider-runnable-track {
-  //margin: -100px;
-  margin-left: -45px;
-  margin-right: -45px;
-}
-::-webkit-slider-thumb {
-  width: 90px;
-  height: 90px;
-  //margin-right: -100px;
-}*/
-
-/*
-::-webkit-slider-thumb {
-  //-webkit-appearance: none;
-  //appearance: none;
-  //margin-left: 300px;
-  width: 45px;
-  height: 45px;
-  //width: 0px;
-  border-left: 90px;
-  //margin-left: -45px;
-  //border-left: 30px;
-  //border-right: 30px;
-  //border-radius: 50%; 
-  //background: #04AA6D;
-  //cursor: pointer;
-  //opacity: 0.2;
-}
-*/
-
-/*
-.mat-primary .mdc-slider__thumb {
-  height: 54px;
-  width: 154px;
-  border-radius: 50%;
-  opacity: 1;
-  background-color: aquamarine;
+  overflow: hidden;
+  /* iOS pwa disable scroll, see app component 
+  https://stackoverflow.com/questions/59193062/how-to-disable-scrolling-on-body-in-ios-13-safari-when-saved-as-pwa-to-the-home
+  */
+  position: fixed;
+   /* FUCKKKKKKKKKKK */  
 }
 
-.mat-primary .mdc-slider__thumb-knob {
-  min-height: 54px;
-  min-width: 154px;
-  border-radius: 50%;
-  opacity: 1;
-  background-color: red;
-}*/
+* {
+  user-select: none;
+}
 
-
+.selectable {
+  user-select: text;
+  // why "OFF" works on iOS with "user-select: none;", but "ON" - NO
+  // only "-webkit-user-select: text;"
+  // WTF??????? WEB IS ABSOLYTELY BROKEN
+  -webkit-user-select: text;
+}
 

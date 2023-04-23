@@ -5,6 +5,7 @@
         <div class="app-toolbar-center">
           #{{title}}
         </div>
+        <!-- 'window.open("https://www.google.com", "_blank");' --> 
         <a href="{{repoLink}}" mat-button target="_blank" style="position: absolute; right: 8px; font-size: small;">GitHub</a>
     </mat-toolbar>  
   </div>
@@ -36,11 +37,6 @@
         <mat-slider class="app-slider-effect" [disabled]="state != State.Work" min="0" max="1" step="0.00625" color="accent">
           <input matSliderThumb [(ngModel)]="effectValue">
         </mat-slider>
-      </mat-toolbar-row>
-      <mat-toolbar-row class="app-toolbar-center" style="display: flex; flex-direction: column;">
-        <div class="slidecontainer">
-          <input type="range" min="1" max="100" value="50"   id="myRange">
-        </div>
       </mat-toolbar-row>
       <!-- buttons -->
       <mat-toolbar-row class="app-toolbar-center" style="grid-template-columns: 1fr repeat(1, auto) 1fr">      

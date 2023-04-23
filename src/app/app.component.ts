@@ -346,6 +346,30 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    // refactor me please ...
+
+    // iOS PWA - no scroll
+    if (navigator.userAgent.toLowerCase().includes('safari')) {
+      window.addEventListener("scroll", (e) => {
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+          e.preventDefault();
+          window.scrollTo(0, 0);
+        }
+      });
+    }
+
+    // only for iOS PWA return from background
+    if (navigator.userAgent.toLowerCase().includes('safari')) {
+      addEventListener("visibilitychange", (event) => {
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+          if (document.visibilityState == 'visible') {
+            this.cameraStop();
+            this.cameraStart(CameraType.Current);
+          }
+        }
+      });
+    }
+
     // layout (arrrrr!)
     this.contentwrapperResizeObserver = new ResizeObserver((entries) => {
       let aspect = this.effects[this.selectedEffect].width / this.effects[this.selectedEffect].height;
