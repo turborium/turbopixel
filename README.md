@@ -2,9 +2,9 @@
 TurboPixel Angular PWA Application
 
 # License
-TurboPixel licensed under Apache 2.0 license, see LICENSE.
-Part of files licensed under MPL1.1, see license notice in each of file.
-If the "source" file does not have a license notice, Apache 2.0 is used by default.
+TurboPixel licensed under Apache 2.0 license, see LICENSE.  
+Part of files licensed under MPL1.1, see license notice in each of file.  
+If the "source" file does not have a license notice, Apache 2.0 is used by default.  
 
 # Project
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
