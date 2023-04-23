@@ -1,0 +1,133 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use "@material/slider/styles";
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /*outline: 1px solid rgb(51, 255, 0);
+    outline-offset: -2.5px ;*/
+}
+
+.app-header {
+    /*opacity: 0.5;*/
+}
+
+.app-footer {
+    /*opacity: 0.5;*/
+}
+
+.app-content {
+    overflow: auto;
+    flex-grow: 1;
+    /*width: 100%;
+    height: 100%;*/
+    opacity: 1;
+}
+
+.app-content-wrapper {
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    /* vertical by default*/
+    display: flex; 
+    flex-direction: row;
+    /* center */
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+}
+
+.app-content-image {
+    /* vertical by default*/
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* + size */
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    /* center */
+    /*align-items: center; 
+    justify-content: center; 
+    text-align: center;*/
+    /* debug */
+    background-color: black;
+    opacity: 1;
+    outline: 1px solid red;
+    outline-offset: -2.5px ;
+}
+
+.app-content-video {
+    background-color: black;
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    top: 0; 
+    left: 0;
+}
+
+.app-content-canvas {
+    opacity: 1;
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    background-color: black;
+    top: 0; 
+    left: 0;
+}
+
+.app-content-spinner {
+    margin: auto;
+}
+
+.app-toolbar-center {
+    width: 100%;
+    display: grid; 
+    grid-auto-flow: column; 
+    justify-content: center; 
+    align-items: center;
+    /*overflow-x: auto; ??? */
+    gap: 8px; 
+}
+
+.app-toolbar-flex {
+    display: flex; 
+    flex-direction: column;
+}
+
+.app-toolbar-bottom-fix {
+    height: 16px;
+}
+
+.app-button-select-effect {
+    width: 100px;
+}
+
+// https://css-tricks.com/sliding-nightmare-understanding-range-input/
+// https://stackoverflow.com/questions/75609221/styling-the-angular-material-15-slider
+// https://stackoverflow.com/questions/30102792/css-media-query-to-target-only-ios-devices
+
+.app-slider-effect {
+    // old workaround without css hack, but has bug
+    // min-width: calc((100% * 0.666) - 16px);
+    // transform: scale(1.5);
+    min-width: calc(100% - 32px);
+    --mdc-slider-active-track-color: transparent;
+}
+
+// ULTRA BEZUMIE, спрашивать на стриме.
+// FIX: too difficult change range/track bar on iOS
+@supports (-webkit-touch-callout: none) {
+    .app-slider-effect ::-webkit-slider-runnable-track {
+        margin-left: -45px;
+        margin-right: -45px;
+    }
+    .app-slider-effect ::-webkit-slider-thumb {
+        width: 90px;
+        height: 90px;
+    }
+}

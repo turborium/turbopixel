@@ -1,0 +1,62 @@
+<div class="app-container mat-typography mat-app-background">
+  <!-- header -->
+  <div class="app-header">
+    <mat-toolbar color="primary" style="position: relative;">
+        <div class="app-toolbar-center">
+          #{{title}}
+        </div>
+        <a href="{{repoLink}}" mat-button target="_blank" style="position: absolute; right: 8px; font-size: small;">GitHub</a>
+    </mat-toolbar>  
+  </div>
+  <!-- content -->
+  <div class="app-content">
+      <div #contentwrapper class="app-content-wrapper">
+        <div #image class="app-content-image">
+          <video #video class="app-content-video"></video>
+          <canvas #canvas class="app-content-canvas"></canvas>
+          <mat-spinner class="app-content-spinner" *ngIf="state == State.Init || state == State.Paused"></mat-spinner>
+          </div>
+      </div>
+  </div>
+  <!-- footer -->
+  <div class="app-footer">
+    <mat-toolbar color="primary">
+      <!-- effect selector -->
+      <mat-toolbar-row class="app-toolbar-center" style="display: flex;">
+        <button mat-stroked-button [disabled]="state != State.Work" (click)="clickBeforeEffect()"> 
+          <mat-icon aria-label="Before" fontIcon="navigate_before"></mat-icon>
+        </button>
+        <button mat-stroked-button style="flex-grow: 1; min-width: 10px;" [disabled]="state != State.Work" (click)="clickOpenBottomSheetEffect()">{{this.effects[this.selectedEffect].title}}</button>
+        <button mat-stroked-button [disabled]="state != State.Work" (click)="clickNextEffect()">
+          <mat-icon aria-label="Next" fontIcon="navigate_next"></mat-icon>
+        </button>           
+      </mat-toolbar-row>
+      <!-- effect value -->
+      <mat-toolbar-row class="app-toolbar-center" style="display: flex; flex-direction: column;">
+        <mat-slider class="app-slider-effect" [disabled]="state != State.Work" min="0" max="1" step="0.00625" color="accent">
+          <input matSliderThumb [(ngModel)]="effectValue">
+        </mat-slider>
+      </mat-toolbar-row>
+      <mat-toolbar-row class="app-toolbar-center" style="display: flex; flex-direction: column;">
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="50"   id="myRange">
+        </div>
+      </mat-toolbar-row>
+      <!-- buttons -->
+      <mat-toolbar-row class="app-toolbar-center" style="grid-template-columns: 1fr repeat(1, auto) 1fr">      
+        <button mat-mini-fab [disabled]="state != State.Work" (click)="clickNextCamera()">
+          <mat-icon>cameraswitch</mat-icon>
+        </button> 
+        <button mat-fab [disabled]="state != State.Work || !hasFrame" color="warn" (click)="clickTakePhoto()">
+          <mat-icon>photo_camera</mat-icon>
+        </button>
+      </mat-toolbar-row>
+      <!-- fix bottom --> 
+      <mat-toolbar-row class="app-toolbar-bottom-fix">
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+</div>
+
+<router-outlet>
+</router-outlet>
