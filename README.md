@@ -49,3 +49,17 @@ change `<body class="mat-typography">` to `<body class="mat-typography mat-app-b
 ## ngrok
 ngrok http 4200 --host-header="localhost:8080"
 
+## After clear
+`npm install`
+
+## PWA
+https://web.dev/creating-pwa-with-angular-cli/  
+`ng add @angular/pwa`
+`cd dist/<projname>`
+`npm i -g http-server`
+``
+add this to "package.json":
+`ng build && http-server -p 8086 -c-1 dist/<projname>`
+use for running
+`npm run start-pwa` 
+`ngrok http 8086 --host-header="localhost:8080"`

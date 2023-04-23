@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start-pwa": "ng build && http-server -p 8086 -c-1 dist/turbopixel"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@angular/service-worker": "^15.2.0",
     "@material/slider": "^15.0.0-canary.684e33d25.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
