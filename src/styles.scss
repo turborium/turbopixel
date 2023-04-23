@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
@@ -19,55 +18,53 @@
 
 /* For use in src/lib/core/theming/_palette.scss */
 $x-orange: (
-  50 : #ffece0,
-  100 : #ffcfb3,
-  200 : #ffaf80,
-  300 : #ff8e4d,
-  400 : #ff7626,
-  500 : #ff5e00,
-  600 : #ff5600,
-  700 : #ff4c00,
-  800 : #ff4200,
-  900 : #ff3100,
-  A100 : #ffffff,
-  A200 : #fff4f2,
-  A400 : #ffc8bf,
-  A700 : #ffb2a6,
-  contrast: (
-      50 : #000000,
-      100 : #000000,
-      200 : #000000,
-      300 : #000000,
-      400 : #ffffff,
-      500 : #ffffff,
-      600 : #ffffff,
-      700 : #ffffff,
-      800 : #ffffff,
-      900 : #ffffff,
-      A100 : #000000,
-      A200 : #000000,
-      A400 : #000000,
-      A700 : #000000,
-  )
+    50 : #ffece0,
+    100 : #ffcfb3,
+    200 : #ffaf80,
+    300 : #ff8e4d,
+    400 : #ff7626,
+    500 : #ff5e00,
+    600 : #ff5600,
+    700 : #ff4c00,
+    800 : #ff4200,
+    900 : #ff3100,
+    A100 : #ffffff,
+    A200 : #fff4f2,
+    A400 : #ffc8bf,
+    A700 : #ffb2a6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
 );
 
-
-
 // https://m2.material.io/design/color/the-color-system.html
-$turbopixel-primary: mat.define-palette($x-orange);//mat.$deep-orange-palette);
+$turbopixel-primary: mat.define-palette($x-orange); //mat.$deep-orange-palette);
 $turbopixel-accent: mat.define-palette(mat.$deep-purple-palette);
 $turbopixel-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $turbopixel-theme: mat.define-dark-theme((
-  color: (
-    primary: $turbopixel-primary,
-    accent: $turbopixel-accent,
-    warn: $turbopixel-warn,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
+    color: (
+        primary: $turbopixel-primary,
+        accent: $turbopixel-accent,
+        warn: $turbopixel-warn,
+        ),
+    typography: mat.define-typography-config(),
+    density: 0,
 ));
 
 // Include theme styles for core and each component used in your app.
@@ -79,36 +76,34 @@ $turbopixel-theme: mat.define-dark-theme((
 //html, body { height: 100%; }
 //body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html { 
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  /* iOS pwa disable scroll, see app component 
-  https://stackoverflow.com/questions/59193062/how-to-disable-scrolling-on-body-in-ios-13-safari-when-saved-as-pwa-to-the-home
-  */
-  position: fixed;
-   /* FUCKKKKKKKKKKK */  
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* iOS pwa disable scroll, see app component 
+    https://stackoverflow.com/questions/59193062/how-to-disable-scrolling-on-body-in-ios-13-safari-when-saved-as-pwa-to-the-home
+    */
+    position: fixed;
 }
 
 * {
-  user-select: none;
+    user-select: none;
 }
 
 .selectable {
-  user-select: text;
-  // why "OFF" works on iOS with "user-select: none;", but "ON" - NO
-  // only "-webkit-user-select: text;"
-  // WTF??????? WEB IS ABSOLYTELY BROKEN
-  -webkit-user-select: text;
+    user-select: text;
+    // why "OFF" works on iOS with "user-select: none;", but "ON" - NO
+    // only "-webkit-user-select: text;"
+    // WTF??????? WEB IS ABSOLYTELY BROKEN
+    -webkit-user-select: text;
 }
-

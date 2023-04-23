@@ -40,11 +40,22 @@
   ***** END LICENSE BLOCK *****
 */
 
+/*
+ Bla, bla, bla, not worked...
+ SEE THIS:
+ https://bugs.webkit.org/show_bug.cgi?id=252465
+ https://bugzilla.mozilla.org/show_bug.cgi?id=1396885
+ https://bugzilla.mozilla.org/show_bug.cgi?id=1286945
+ and other browser bug-trackers.
+ camera is BROKEN
+ CHROME IS BROKEN TOO!
+*/
+
 export enum CameraType {
     User,
     Environment,
     Next,
-    Current, 
+    Current,
 }
 
 export class Camera {
@@ -122,8 +133,8 @@ export class Camera {
 
         this.canvas.width = width;
         this.canvas.height = height;
-        
-        let constraints: MediaTrackConstraints = {}; 
+
+        let constraints: MediaTrackConstraints = {};
 
         // width
         // height
@@ -164,7 +175,7 @@ export class Camera {
                 constraints.deviceId = this.deviceId;
                 break;
             default:
-                constraints.deviceId = this.deviceId; 
+                constraints.deviceId = this.deviceId;
         }
 
         return navigator.mediaDevices
@@ -188,23 +199,23 @@ export class Camera {
 
             return stream;
         });
-    } 
+    }
 
     getFrame(): ImageData | null {
         if (this.video == null || this.video.videoWidth == 0 || this.video.videoHeight == 0) {
             return null;
         }
 
-        let context = this.canvas.getContext("2d", {willReadFrequently: true})!;
+        let context = this.canvas.getContext("2d", { willReadFrequently: true })!;
 
         let w, h = 0;
         let widthHeight = this.video.videoWidth / this.video.videoHeight;
         if (this.canvas.height < (this.canvas.width / widthHeight)) {
-          w = this.canvas.width;
-          h = this.canvas.width / widthHeight;
+            w = this.canvas.width;
+            h = this.canvas.width / widthHeight;
         } else {
-          h = this.canvas.height;
-          w = this.canvas.height * widthHeight;
+            h = this.canvas.height;
+            w = this.canvas.height * widthHeight;
         }
 
         context.drawImage(this.video, -(w - this.canvas.width) * 0.5, -(h - this.canvas.height) * 0.5, w, h);
@@ -214,7 +225,7 @@ export class Camera {
         context.fillStyle = "red";
         context.fillText(this.video.videoWidth.toString() + 'x' + this.video.videoHeight.toString(), 110, 110);
         */
-        
+
         return context.getImageData(0, 0, this.canvas.width, this.canvas.height);
     }
 
@@ -223,16 +234,16 @@ export class Camera {
             return null;
         }
 
-        let context = this.canvas.getContext("2d", {willReadFrequently: true})!;
+        let context = this.canvas.getContext("2d", { willReadFrequently: true })!;
 
         let w, h = 0;
         let widthHeight = this.video.videoWidth / this.video.videoHeight;
         if (height < (width / widthHeight)) {
-          w = width;
-          h = width / widthHeight;
+            w = width;
+            h = width / widthHeight;
         } else {
-          h = height;
-          w = height * widthHeight;
+            h = height;
+            w = height * widthHeight;
         }
 
         context.drawImage(this.video, -(w - width) * 0.5, -(h - height) * 0.5, w, h);
@@ -244,7 +255,7 @@ export class Camera {
         */
         //context.strokeStyle = "red";
         //context.strokeRect(0, 0, width, height);
-        
+
         return context.getImageData(0, 0, width, height);
     }
 }

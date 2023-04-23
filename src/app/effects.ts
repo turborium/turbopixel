@@ -41,19 +41,19 @@
 */
 
 import {
-    Color, 
+    Color,
     TestEchoEffect,
-    BayerColorPaletteEffect, 
-    BayerPaletteEffect, 
-    PaletteStickiEffect, 
-    PaletteDitherEffect, 
-    RGBDitherEffect, 
-    JustRgbEffect, 
-    BlackWhiteStuckiDitherEffect, 
-    PixelEffect, 
-    ChornobylEffect, 
-    BlackWhiteDitherEffect, 
-    GrayDitherEffect 
+    BayerColorPaletteEffect,
+    BayerPaletteEffect,
+    PaletteStickiEffect,
+    PaletteDitherEffect,
+    RGBDitherEffect,
+    JustRgbEffect,
+    BlackWhiteStuckiDitherEffect,
+    PixelEffect,
+    ChornobylEffect,
+    BlackWhiteDitherEffect,
+    GrayDitherEffect
 } from './pixelator';
 
 export const effects: Array<PixelEffect> = [
@@ -213,7 +213,7 @@ export const effects: Array<PixelEffect> = [
             0xff80a4,
             0xff2674,
             0x94216a,
-            0x430067, 
+            0x430067,
         ],
     ),
     // -------------------------------------------------------------------
@@ -266,7 +266,7 @@ export const effects: Array<PixelEffect> = [
             0xFFe9f6e3,
             0xFFf9fff0,
             0xFF293425,
-            0xFF8f9a8b, 
+            0xFF8f9a8b,
         ],
     ),
     // -------------------------------------------------------------------
@@ -286,7 +286,7 @@ export const effects: Array<PixelEffect> = [
             0xFF7f3355,
             0xFF000000,
             0xFF114c77,
-            0xFF8891aa,  
+            0xFF8891aa,
         ],
     ),
     // -------------------------------------------------------------------
@@ -310,7 +310,7 @@ export const effects: Array<PixelEffect> = [
             0xFF484850,
             0xFF313848,
             0xFF1c283e,
-            0xFF0b1321,       
+            0xFF0b1321,
         ],
     ),
     // -------------------------------------------------------------------
@@ -334,7 +334,7 @@ export const effects: Array<PixelEffect> = [
             0xFFf8c8af,
             0xFFa17374,
             0xFF2e5b86,
-            0xFF0c2a47,          
+            0xFF0c2a47,
         ],
     ),
     // -------------------------------------------------------------------
@@ -356,7 +356,7 @@ export const effects: Array<PixelEffect> = [
             0xFFa070c8,
             0xFF683090,
             0xFF481868,
-            0xFF000000,           
+            0xFF000000,
         ],
     ),
     // -------------------------------------------------------------------
@@ -475,66 +475,66 @@ export const effects: Array<PixelEffect> = [
         180,
         180,
         [
-          0xFFffb780,
-          0xFFdf6d5c,
-          0xFFb42a43,
-          0xFF871638,
-          0xFF470d2f,
-          0xFFfdf3c9,
-          0xFFffe789,
-          0xFFffc15c,
-          0xFFd66b4d,
-          0xFF5e2039,
-          0xFFc9e17a,
-          0xFF85d25a,
-          0xFF33ab47,
-          0xFF15674a,
-          0xFF093a3c,
-          0xFF8acbe8,
-          0xFF6c89e1,
-          0xFF5642ca,
-          0xFF261c65,
-          0xFF160b2d,
-          0xFFd8abd0,
-          0xFFbe7ec5,
-          0xFF6c4594,
-          0xFF422770,
-          0xFF1c122d,
-          0xFFf9cec8,
-          0xFFe38f9e,
-          0xFFc7628a,
-          0xFF9a3f72,
-          0xFF431e39,
-          0xFFc79e9e,
-          0xFF8e5f64,
-          0xFF583445,
-          0xFF3c2230,
-          0xFF1c0f18,
-          0xFFaa9ccc,
-          0xFF5f558d,
-          0xFF454070,
-          0xFF24213e,
-          0xFF121222,
-          0xFFa3d8b3,
-          0xFF5cb68a,
-          0xFF2b8074,
-          0xFF1c585e,
-          0xFF0e2836,
-          0xFFdbbf9e,
-          0xFFca977c,
-          0xFFae6a52,
-          0xFF72363e,
-          0xFF471930,
-          0xFFe4e2ea,
-          0xFFcdc9d8,
-          0xFFa49fb6,
-          0xFF86809a,
-          0xFF5b556f,
-          0xFF453f56,
-          0xFF322e42,
-          0xFF221f2d,
-          0xFF13111a,
-          0xFF09080d,
+            0xFFffb780,
+            0xFFdf6d5c,
+            0xFFb42a43,
+            0xFF871638,
+            0xFF470d2f,
+            0xFFfdf3c9,
+            0xFFffe789,
+            0xFFffc15c,
+            0xFFd66b4d,
+            0xFF5e2039,
+            0xFFc9e17a,
+            0xFF85d25a,
+            0xFF33ab47,
+            0xFF15674a,
+            0xFF093a3c,
+            0xFF8acbe8,
+            0xFF6c89e1,
+            0xFF5642ca,
+            0xFF261c65,
+            0xFF160b2d,
+            0xFFd8abd0,
+            0xFFbe7ec5,
+            0xFF6c4594,
+            0xFF422770,
+            0xFF1c122d,
+            0xFFf9cec8,
+            0xFFe38f9e,
+            0xFFc7628a,
+            0xFF9a3f72,
+            0xFF431e39,
+            0xFFc79e9e,
+            0xFF8e5f64,
+            0xFF583445,
+            0xFF3c2230,
+            0xFF1c0f18,
+            0xFFaa9ccc,
+            0xFF5f558d,
+            0xFF454070,
+            0xFF24213e,
+            0xFF121222,
+            0xFFa3d8b3,
+            0xFF5cb68a,
+            0xFF2b8074,
+            0xFF1c585e,
+            0xFF0e2836,
+            0xFFdbbf9e,
+            0xFFca977c,
+            0xFFae6a52,
+            0xFF72363e,
+            0xFF471930,
+            0xFFe4e2ea,
+            0xFFcdc9d8,
+            0xFFa49fb6,
+            0xFF86809a,
+            0xFF5b556f,
+            0xFF453f56,
+            0xFF322e42,
+            0xFF221f2d,
+            0xFF13111a,
+            0xFF09080d,
         ]
     ),
     // -------------------------------------------------------------------
@@ -543,25 +543,25 @@ export const effects: Array<PixelEffect> = [
         200,
         200,
         [
-          0xFFffffff,
-          0xFFffdd84,
-          0xFFec955b,
-          0xFF883a56,
-          0xFFd95959,
-          0xFFfc83c7,
-          0xFFaa5ec3,
-          0xFF443c7e,
-          0xFF566ed0,
-          0xFF7bb1eb,
-          0xFF98eb77,
-          0xFF3eca6b,
-          0xFF49868b,
-          0xFF10101d,
+            0xFFffffff,
+            0xFFffdd84,
+            0xFFec955b,
+            0xFF883a56,
+            0xFFd95959,
+            0xFFfc83c7,
+            0xFFaa5ec3,
+            0xFF443c7e,
+            0xFF566ed0,
+            0xFF7bb1eb,
+            0xFF98eb77,
+            0xFF3eca6b,
+            0xFF49868b,
+            0xFF10101d,
         ]
     ),
     // -------------------------------------------------------------------
     new PaletteStickiEffect(
-    '● T800 Flex',
+        '● T800 Flex',
         256,
         256,
         [
@@ -850,7 +850,7 @@ export const effects: Array<PixelEffect> = [
         '■ Ani View',
         256,
         256,
-        [  
+        [
             // https://lospec.com/palette-list/mulfok32
             0xFF5ba675,
             0xFF6bc96c,
@@ -970,7 +970,7 @@ export const effects: Array<PixelEffect> = [
             0xFF0c7475,
             0xFFbc4a9b,
             0xFFeb8d9c,
-            0xFFffd8ba, 
+            0xFFffd8ba,
         ],
         new Color(9, 3, 5)
     ),
@@ -985,11 +985,11 @@ export const effects: Array<PixelEffect> = [
             0xFFFF88FF,
             0xFF880000,
             0xFF000000,
-            0xFFFFFFFF, 
-            0xFFFF00FF, 
-            0xFF880088, 
-            0xFF8800FF, 
-            0xFF5500EE, 
+            0xFFFFFFFF,
+            0xFFFF00FF,
+            0xFF880088,
+            0xFF8800FF,
+            0xFF5500EE,
         ],
         new Color(4, 4, 4)
     ),
@@ -1100,7 +1100,7 @@ export const effects: Array<PixelEffect> = [
             0xFF84a3a5,
             0xFF4d7c71,
             0xFF405987,
-            0xFF1f2f49, 
+            0xFF1f2f49,
         ],
         new Color(4, 4, 4)
     ),
@@ -1146,7 +1146,7 @@ export const effects: Array<PixelEffect> = [
         [
             0xFF000000,
             0xFF676767,
-            0xFFb6b6b6, 
+            0xFFb6b6b6,
             0xFFFFFFFF,
         ]
     ),
@@ -1158,7 +1158,7 @@ export const effects: Array<PixelEffect> = [
         [
             0xFF1b0326,
             0xFF7a1c4b,
-            0xFFba5044, 
+            0xFFba5044,
             0xFFeff9d6,
         ]
     ),
@@ -1170,7 +1170,7 @@ export const effects: Array<PixelEffect> = [
         [
             0xFF202020,
             0xFF5e6745,
-            0xFFaeba89, 
+            0xFFaeba89,
             0xFFe3eec0,
         ]
     ),
@@ -1239,7 +1239,7 @@ export const effects: Array<PixelEffect> = [
             0xFF302387,
             0xFFff3796,
             0xFF00faac,
-            0xFFfffdaf,   
+            0xFFfffdaf,
         ]
     ),
     // -------------------------------------------------------------------
@@ -1255,7 +1255,7 @@ export const effects: Array<PixelEffect> = [
             0xFFd68fb8,
             0xFFdda2a3,
             0xFFeac4ae,
-            0xFFf4dfbe, 
+            0xFFf4dfbe,
         ]
     ),
     // -------------------------------------------------------------------
@@ -1293,7 +1293,7 @@ export const effects: Array<PixelEffect> = [
         256,
         256,
         [
-            0xFF000000, 
+            0xFF000000,
             0xFF000000,
             0xFFffff20,
         ]
@@ -1315,19 +1315,7 @@ export const effects: Array<PixelEffect> = [
             0xFF0e4c82,
             0xFF1179b1,
             0xFF34b0dc,
-            0xFF70eeff, 
+            0xFF70eeff,
         ]
     ),
-    // -------------------------------------------------------------------
-
-
-    
-    
-    // -------------------------------------------------------------------
-
-
-
-
-
-
-  ];
+];

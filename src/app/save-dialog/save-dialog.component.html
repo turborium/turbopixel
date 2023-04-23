@@ -1,26 +1,23 @@
-
 <h1 mat-dialog-title>Save</h1>
 <div mat-dialog-content>
     <div style="display: flex; justify-content: center">
         <img src={{data.image}} style="width: 100%; margin-bottom: 8px;">
-    </div> 
+    </div>
     <!--mat-card style="overflow: auto;"-->
-        <button 
-        mat-button (click)="copyDescription()" 
-        [matTooltipDisabled]="true"
-        matTooltip="Text Has Been Copied!" 
+    <button mat-button (click)="copyDescription()" [matTooltipDisabled]="true" matTooltip="Text Has Been Copied!"
         #copyTooltip="matTooltip"
         style="width: 100%; overflow: hidden; padding: 4px; display: flex; align-items: center; justify-content: center; font-size: x-small; line-height: normal;">
-            <div class="selectable" >{{data.text}}<br>{{data.appLink}}</div>
-        </button>
+        <div class="selectable">{{data.text}}<br>{{data.appLink}}</div>
+    </button>
     <!--/mat-card-->
 </div>
 <div mat-dialog-actions style="display: flex; justify-content: center">
     <button mat-raised-button color="primary" [mat-dialog-close]="SaveDialogResult.Download">Save</button>
-    <button *ngIf="this.allowCopy" mat-raised-button color="primary" [mat-dialog-close]="SaveDialogResult.Copy">Copy</button>
-    <button *ngIf="this.allowShare" mat-raised-button color="primary" [mat-dialog-close]="SaveDialogResult.Share">Share</button>
-</div> 
+    <button *ngIf="this.allowCopy" mat-raised-button color="primary"
+        [mat-dialog-close]="SaveDialogResult.Copy">Copy</button>
+    <button *ngIf="this.allowShare" mat-raised-button color="primary"
+        [mat-dialog-close]="SaveDialogResult.Share">Share</button>
+</div>
 <div mat-dialog-actions style="display: flex; justify-content: center">
     <button mat-raised-button [mat-dialog-close]="SaveDialogResult.Cancel">Cancel</button>
-</div> 
-
+</div>
