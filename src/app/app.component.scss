@@ -123,11 +123,11 @@
 // FIX: too difficult change range/track bar on iOS
 @supports (-webkit-touch-callout: none) {
     .app-slider-effect ::-webkit-slider-runnable-track {
-        margin-left: -45px;
-        margin-right: -45px;
+        margin-left: -35px;
+        margin-right: -35px;
     }
     .app-slider-effect ::-webkit-slider-thumb {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 }

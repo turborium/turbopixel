@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider'; 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ServiceWorkerModule } from '@angular/service-worker'; 
 
@@ -44,6 +45,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatSliderModule,
     MatProgressSpinnerModule,
     MatBottomSheetModule,
+    MatTooltipModule,
     // --
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),

@@ -4,11 +4,16 @@
     <div style="display: flex; justify-content: center">
         <img src={{data.image}} style="width: 100%; margin-bottom: 8px;">
     </div> 
-    <mat-card style="overflow: auto;">
-        <mat-card-content style="padding: 4px; display: flex; align-items: center; justify-content: center; font-size:small;">
-            <div class="selectable">{{data.text}}<br>{{data.appLink}}</div>
-        </mat-card-content>
-    </mat-card>
+    <!--mat-card style="overflow: auto;"-->
+        <button 
+        mat-button (click)="copyDescription()" 
+        [matTooltipDisabled]="true"
+        matTooltip="Text Has Been Copied!" 
+        #copyTooltip="matTooltip"
+        style="width: 100%; overflow: hidden; padding: 4px; display: flex; align-items: center; justify-content: center; font-size: x-small; line-height: normal;">
+            <div class="selectable" >{{data.text}}<br>{{data.appLink}}</div>
+        </button>
+    <!--/mat-card-->
 </div>
 <div mat-dialog-actions style="display: flex; justify-content: center">
     <button mat-raised-button color="primary" [mat-dialog-close]="SaveDialogResult.Download">Save</button>

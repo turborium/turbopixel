@@ -362,7 +362,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     if (navigator.userAgent.toLowerCase().includes('safari')) {
       addEventListener("visibilitychange", (event) => {
         if (window.matchMedia('(display-mode: standalone)').matches) {
-          if (document.visibilityState == 'visible') {
+          if (document.visibilityState == 'visible' && this.state == State.Work) {
             this.cameraStop();
             this.cameraStart(CameraType.Current);
           }
