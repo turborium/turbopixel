@@ -293,7 +293,7 @@ let bayerMatrix4x4 = [
     [10, 6, 9, 5],
 ];
 
-export class BayerPaletteEffect implements PixelEffect {
+export class BayerPowerDitheringEffect implements PixelEffect {
     title = 'Bayer';
     width = 250;
     height = 250;
@@ -352,7 +352,7 @@ let calcDist = (color1: Color, color2: Color) => {
     return distR * distR * 2 + distG * distG * 3 + distB * distB;
 }
 
-export class BayerColorPaletteEffect implements PixelEffect {
+export class BayerDitheringEffect implements PixelEffect {
     title = 'Bayer';
     width = 250;
     height = 250;
@@ -665,7 +665,7 @@ export class PaletteDitherEffect implements PixelEffect {
     }
 }
 
-export class PaletteStickiEffect implements PixelEffect {
+export class StuckiDitheringEffect implements PixelEffect {
     title = 'Palette Dither';
     width = 256;
     height = 256;

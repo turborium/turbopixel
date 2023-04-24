@@ -43,9 +43,9 @@
 import {
     Color,
     TestEchoEffect,
-    BayerColorPaletteEffect,
-    BayerPaletteEffect,
-    PaletteStickiEffect,
+    BayerDitheringEffect,
+    BayerPowerDitheringEffect,
+    StuckiDitheringEffect,
     PaletteDitherEffect,
     RGBDitherEffect,
     JustRgbEffect,
@@ -58,7 +58,7 @@ import {
 
 export const effects: Array<PixelEffect> = [
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Pastel View',
         220,
         220,
@@ -76,7 +76,19 @@ export const effects: Array<PixelEffect> = [
         new Color(3, 6, 2)
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new BayerPowerDitheringEffect(
+        'Bayer Mono 4',
+       220,
+       220,
+       [
+           0xFF000000,
+           0xFF676767,
+           0xFFb6b6b6,
+           0xFFFFFFFF,
+       ]
+    ),
+    // -------------------------------------------------------------------
+    new StuckiDitheringEffect(
         'Cosmo Vors',
         256,
         256,
@@ -100,7 +112,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------  
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Ani View',
        256,
        256,
@@ -142,7 +154,7 @@ export const effects: Array<PixelEffect> = [
        new Color(3, 5, 6)
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'Pocket Console',
        160,
        160,
@@ -154,7 +166,7 @@ export const effects: Array<PixelEffect> = [
        ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'T800 Flex',
         256,
         256,
@@ -165,7 +177,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Hot Chocolate',
         220,
         220,
@@ -181,7 +193,7 @@ export const effects: Array<PixelEffect> = [
     // -------------------------------------------------------------------
     new JustRgbEffect('Just RGB'),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'Frozen Photo',
         180,
         180,
@@ -197,7 +209,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Classic PC II',
         200,
         200,
@@ -221,7 +233,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Magenta Odd',
         220,
         220,
@@ -243,7 +255,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'Liquid Chrome',
         320,
         320,
@@ -260,7 +272,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Ton 60',
         180,
         180,
@@ -328,7 +340,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Old Sunset',
         300,
         300,
@@ -348,7 +360,7 @@ export const effects: Array<PixelEffect> = [
         new Color(4, 4, 4)
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'BK0010',
         256,
         256,
@@ -360,7 +372,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
          'Yellow Night',
         256,
         256,
@@ -396,7 +408,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Mono Stucki',
         256,
         256,
@@ -406,7 +418,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
          'Fruit Five',
         240,
         240,
@@ -421,7 +433,7 @@ export const effects: Array<PixelEffect> = [
         new Color(3, 3, 3)
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Pico-8',
        128,
        128,
@@ -446,7 +458,7 @@ export const effects: Array<PixelEffect> = [
        new Color(4, 4, 4),//3, 3, 3)
     ),
    // -------------------------------------------------------------------
-   new BayerPaletteEffect(
+   new BayerPowerDitheringEffect(
         'Coral 4',
         220,
         220,
@@ -458,7 +470,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Artistic Dance',
        256,
        256,
@@ -477,7 +489,7 @@ export const effects: Array<PixelEffect> = [
        new Color(3, 6, 2)
     ),
     // -------------------------------------------------------------------  
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Classic C64',
         192,
         192,
@@ -503,7 +515,7 @@ export const effects: Array<PixelEffect> = [
         new Color(5, 5, 4)
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Elephant',
         240,
         240,
@@ -570,7 +582,7 @@ export const effects: Array<PixelEffect> = [
     // -------------------------------------------------------------------
     new ChornobylEffect('Chornobyl'),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Oil Stucki',
         256,
         256,
@@ -584,7 +596,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Undeground Worms',
         256,
         256,
@@ -622,20 +634,8 @@ export const effects: Array<PixelEffect> = [
         ],
         new Color(6, 6, 4)
     ),
-    // -------------------------------------------------------------------
-    new BayerPaletteEffect(
-        'Bayer Mono 4',
-       220,
-       220,
-       [
-           0xFF000000,
-           0xFF676767,
-           0xFFb6b6b6,
-           0xFFFFFFFF,
-       ]
-   ),
    // -------------------------------------------------------------------
-   new BayerPaletteEffect(
+   new BayerPowerDitheringEffect(
         'Photo Paper',
        320,
        320,
@@ -647,7 +647,7 @@ export const effects: Array<PixelEffect> = [
        ]
    ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Half 32',
         230,
         230,
@@ -687,7 +687,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------  
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Dual Base',
        220,
        220,
@@ -702,7 +702,7 @@ export const effects: Array<PixelEffect> = [
        new Color(5, 5, 8)
    ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Moda 12',
         128,
         128,
@@ -722,7 +722,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'T-800',
         256,
         256,
@@ -749,7 +749,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Fun Orange',
        160,
        160,
@@ -766,7 +766,7 @@ export const effects: Array<PixelEffect> = [
        new Color(4, 3, 3)
    ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Morning Coffee',
         300,
         300,
@@ -790,7 +790,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------  
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Cuber Summer',
         256,
         256,
@@ -806,7 +806,7 @@ export const effects: Array<PixelEffect> = [
         new Color(9, 3, 5)
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Impulse',
         256,
         256,
@@ -839,7 +839,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Vic 20',
         160,
         160,
@@ -873,7 +873,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'Dream Star',
         220,
         220,
@@ -889,7 +889,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Slom',
         200,
         200,
@@ -909,7 +909,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Win16 Classic',
         320,
         320,
@@ -934,7 +934,7 @@ export const effects: Array<PixelEffect> = [
         new Color(3, 3, 3)
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Cherry',
         200,
         200,
@@ -952,7 +952,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Lime Night',
         200,
         200,
@@ -965,7 +965,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------  
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Daytime Sleep',
         200,
         200,
@@ -995,7 +995,7 @@ export const effects: Array<PixelEffect> = [
         new Color(4, 4, 6)
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'Suggar World',
         180,
         180,
@@ -1007,7 +1007,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
          'Cherry View ',//●
         220,
         220,
@@ -1026,7 +1026,7 @@ export const effects: Array<PixelEffect> = [
         new Color(4, 4, 4)
     ),
     // ------------------------------------------------------------------- 
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Lo-Fi Pixels',
         200,
         200,
@@ -1050,7 +1050,7 @@ export const effects: Array<PixelEffect> = [
         new Color(5, 7, 6)
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Final 14',
         200,
         200,
@@ -1072,7 +1072,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'Summer Tea',
         180,
         180,
@@ -1088,7 +1088,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Simple Case',
         128,
         128,
@@ -1108,7 +1108,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'Bayer Mono',
        220,
        220,
@@ -1118,7 +1118,7 @@ export const effects: Array<PixelEffect> = [
        ]
     ),
     // ------------------------------------------------------------------- 
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Classic CGA',
         240,
         240,
@@ -1142,7 +1142,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Rock 16',
         160,
         160,
@@ -1166,7 +1166,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // ------------------------------------------------------------------- 
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Warm Light',
        200,
        200,
@@ -1191,7 +1191,7 @@ export const effects: Array<PixelEffect> = [
        new Color(5, 4, 3)
    ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Dusty Place',
         256,
         256,
@@ -1217,7 +1217,7 @@ export const effects: Array<PixelEffect> = [
         new Color(4, 3, 3),
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'MDR 2',
         200,
         200,
@@ -1236,7 +1236,7 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
-    new PaletteStickiEffect(
+    new StuckiDitheringEffect(
         'Pastel Hi',
         256,
         256,
@@ -1260,7 +1260,7 @@ export const effects: Array<PixelEffect> = [
         ],
     ),
     // -------------------------------------------------------------------
-    new BayerColorPaletteEffect(
+    new BayerDitheringEffect(
         'Just 16',
         220,
         220,
@@ -1285,7 +1285,7 @@ export const effects: Array<PixelEffect> = [
         new Color(3, 3, 3)
     ),
     // -------------------------------------------------------------------
-    new BayerPaletteEffect(
+    new BayerPowerDitheringEffect(
         'Psycho',
         200,
         200,
