@@ -456,7 +456,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
                 this.effectMaxHeight = effect.height;
         }
 
-        this.watermark.src = '/assets/watermark.png';
+        this.watermark.src = 'assets/watermark.png';
 
         // camera 
         this.camera = new Camera(this.video.nativeElement);
