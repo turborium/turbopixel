@@ -67,3 +67,6 @@ use for running
 ## deploy
 ng add angular-cli-ghpages  
 ng deploy --base-href=https://turborium.github.io/turbopixel/
+
+## manual 
+ng build --base-href https://turborium.github.io/turbopixel/
