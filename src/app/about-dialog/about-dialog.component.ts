@@ -3,6 +3,7 @@ import { ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { MatTooltip } from '@angular/material/tooltip';
+import packageJson from 'package.json'
 
 @Component({
   selector: 'app-about-dialog',
@@ -44,5 +45,9 @@ export class AboutDialogComponent {
                 tooltip.disabled = true;
             }, 1000);
         });
+    }
+
+    get version(): string {
+        return packageJson.version;
     }
 }
