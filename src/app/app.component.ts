@@ -100,10 +100,14 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     private camera!: Camera;
     private contentwrapperResizeObserver?: ResizeObserver;
     private timer: any = 0;
+    private hangsFrameCount: number = 0;
     private effectMaxWidth: number = 320;
     private effectMaxHeight: number = 320;
     private cachedCanvas = document.createElement('canvas');
     private watermark = new Image();
+
+    private readonly cameraFPS = 25;
+    private readonly hangsTime = 1800;
 
     constructor(private dialog: MatDialog, private bottomSheet: MatBottomSheet) {
 
@@ -287,11 +291,14 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         .then(() => {
             this.state = State.Work;
 
+            // addEventListener("inactive".. not fired on iOS
+            this.hangsFrameCount = 0;
+
             clearInterval(this.timer);
             this.timer = setInterval(() => {
                 this.updateFrame();
             },
-                50);
+            1000 / this.cameraFPS);
             this.updateFrame();
         })
         .catch((error) => {
@@ -310,6 +317,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     }
 
     cameraStop() {
+        clearInterval(this.timer);
         this.hasFrame = false;
         this.state = State.Paused;
         this.camera.stop();
@@ -338,7 +346,15 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     // mmm... some smell
     updateFrame() {
         this.hasFrame = false;
+        
+        // check hangs frames (iOS)
+        if (navigator.userAgent.toLowerCase().includes('safari') && this.hangsTime < this.hangsFrameCount * (1000 / this.cameraFPS)) {
+            this.cameraStop();
+            this.cameraStart(CameraType.Current);
+            return;
+        }
 
+        // try get frame
         let frame = this.camera.getFrameWithSize(
             this.effects[this.selectedEffect].width,
             this.effects[this.selectedEffect].height
@@ -348,9 +364,14 @@ export class AppComponent implements AfterViewInit, OnDestroy {
                 0, 0,
                 this.canvas.nativeElement.width, this.canvas.nativeElement.height
             );
+            this.hangsFrameCount++;
             return;
         }
 
+        // no hangs
+        this.hangsFrameCount = 0;
+
+        // process
         this.effects[this.selectedEffect].process(frame, this.effectValue);
 
         // draw frame

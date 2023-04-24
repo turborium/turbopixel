@@ -20,7 +20,7 @@
                 <video #video class="app-content-video"></video>
                 <canvas #canvas class="app-content-canvas"></canvas>
                 <mat-spinner class="app-content-spinner"
-                    *ngIf="state == State.Init || state == State.Paused"></mat-spinner>
+                    *ngIf="state == State.Init || (!hasFrame && State.Work)"></mat-spinner>
             </div>
         </div>
     </div>
