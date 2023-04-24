@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Inject } from '@angular/core';
 
 export enum CameraErrorDialogResult {
     TryAgain,
@@ -11,5 +13,7 @@ export enum CameraErrorDialogResult {
     styleUrls: ['./camera-error-dialog.component.css']
 })
 export class CameraErrorDialogComponent {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+
     CameraErrorDialogResult = CameraErrorDialogResult;
 }

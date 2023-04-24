@@ -25,16 +25,19 @@ import { MatTooltip } from '@angular/material/tooltip';
 
 import { SaveDialogComponent, SaveDialogResult } from './save-dialog/save-dialog.component';
 import { CameraErrorDialogComponent, CameraErrorDialogResult } from './camera-error-dialog/camera-error-dialog.component';
+import { AboutDialogComponent } from './about-dialog/about-dialog.component';
 
 import { PixelEffect } from './pixelator';
 import { effects } from './effects';
+
+import { iconCharForEffect } from './utils';
 
 @Component({
     selector: 'bottom-sheet-effects',
     template: `
     <mat-nav-list>
       <a mat-list-item (click)="openLink(i)" *ngFor="let effect of data.effects; index as i;">
-        <span matLine>{{effect.title}}</span>
+        <span class="appicon">{{effectIcon(effect)}} </span><span matLine>{{effect.title}}</span>
       </a>
     </mat-nav-list>
   `,
@@ -48,6 +51,10 @@ export class BottomSheetEffects {
 
     openLink(index: number): void {
         this.bottomSheetRef.dismiss(index);
+    }
+
+    effectIcon(effect: PixelEffect) {
+        return iconCharForEffect(effect);
     }
 }
 
@@ -70,15 +77,15 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
     @ViewChild('image') image!: ElementRef<HTMLElement>;
     @ViewChild('contentwrapper') contentwrapper!: ElementRef<HTMLElement>;
-    @ViewChild("copyLinkToAppTooltip") copyLinkToAppTooltip!: MatTooltip;
 
     readonly State = State;
 
     // title of application
     title: string = 'TurboPixel';
     // repo
-    repoLink: string = 'https://www.github.com/turborium/TurboPixel';
+    repoLink: string = 'https://www.github.com/turborium/turbopixel';
     appLink: string = 'https://turborium.github.io/turbopixel';
+    socLink: string = 'https://t.me/turborium';
     // current state
     state: State = State.Init;
     // has processed frame
@@ -150,6 +157,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         // save dialog
         const dialogRef = this.dialog.open(SaveDialogComponent, {
             disableClose: false,
+            maxWidth: "96vw",
+            maxHeight: "96vh",
             data: {
                 image: dataUrl,
                 text: shareText,
@@ -234,15 +243,38 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         });
     }
 
-    clickCopyLinkToApp() {
-        navigator.clipboard.writeText(this.appLink)
+    clickAbout() {
+        // NOT WORK???
+        // https://stackoverflow.com/questions/45928423/get-rid-of-white-space-around-angular-material-modal-dialog
+        // about dialog
+        const dialogRef = this.dialog.open(AboutDialogComponent, {
+            disableClose: false,
+            //panelClass: 'app-dialog-container',
+            maxWidth: "96vw",
+            data: {
+                appLink: this.appLink,
+                repoLink: this.repoLink,
+                socLink: this.socLink,
+            }
+        });
+
+        // camera off
+        dialogRef.afterOpened().subscribe(() => {
+            this.cameraStop();
+        });
+
+        // camera on
+        dialogRef.afterClosed().subscribe(async (result) => {
+            this.cameraStart(CameraType.Current);
+        });
+        /*navigator.clipboard.writeText(this.appLink)
         .then(() => {
             this.copyLinkToAppTooltip.disabled = false;
             this.copyLinkToAppTooltip.show()
             setTimeout(() => {
                 this.copyLinkToAppTooltip.disabled = true;
             }, 1000);
-        });
+        });*/
     }
 
     cameraStart(cameraType: CameraType) {
@@ -413,6 +445,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
     ngOnDestroy() {
         this.contentwrapperResizeObserver?.unobserve(this.contentwrapper.nativeElement);
+    }
+
+    effectIcon(effect: PixelEffect) {
+        return iconCharForEffect(effect);
     }
 }
 

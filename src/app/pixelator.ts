@@ -42,17 +42,30 @@
 
 // the dark side
 
+export enum EffectKind {
+    OrderedDither,
+    BayerDither,
+    StuckiDither,
+    FloydSteinbergDither,
+    Other,
+}
+
 export interface PixelEffect {
     readonly title: string;
     readonly width: number;
     readonly height: number;
+    readonly kind: EffectKind;
     process(frame: ImageData, value: number): void;
 }
 
 export class TestEchoEffect implements PixelEffect {
-    title = '◢ Red Echo Test';
+    title = '▢ Red Echo Test';
     width = 200;
     height = 200;
+    kind = EffectKind.Other;
+    constructor(title: string) {
+        this.title = title;
+    }
     process(frame: ImageData, value: number) {
         for (let i = 0; i < frame.data.length; i += 4) {
             let r = frame.data[i + 0];
@@ -76,9 +89,13 @@ export class TestEchoEffect implements PixelEffect {
 }
 
 export class ChornobylEffect implements PixelEffect {
-    title = '◢ Chornobyl';
+    title = '▢ Chornobyl';
     width = 320;
     height = 320;
+    kind = EffectKind.Other;
+    constructor(title: string) {
+        this.title = title;
+    }
     process(frame: ImageData, value: number) {
         for (let i = 0; i < frame.data.length; i += 4) {
             let r = frame.data[i + 0];
@@ -105,9 +122,13 @@ export class ChornobylEffect implements PixelEffect {
 }
 
 export class JustRgbEffect implements PixelEffect {
-    title = '◢ Just RGB';
+    title = '▢ Just RGB';
     width = 320;
     height = 320;
+    kind = EffectKind.Other;
+    constructor(title: string) {
+        this.title = title;
+    }
     process(frame: ImageData, value: number) {
         for (let i = 0; i < frame.data.length; i += 4) {
             let r = frame.data[i + 0];
@@ -144,6 +165,7 @@ export class BlackWhiteDitherEffect implements PixelEffect {
     title = 'B/W Dither';
     width = 250;
     height = 250;
+    kind = EffectKind.FloydSteinbergDither;
     process(frame: ImageData, value: number) {
         let currentError: Array<number> = [];
         let nextError: Array<number> = [];
@@ -200,6 +222,7 @@ export class BlackWhiteStuckiDitherEffect implements PixelEffect {
     title = 'B/W Stucki';
     width = 250;
     height = 250;
+    kind = EffectKind.StuckiDither;
     process(frame: ImageData, value: number) {
         let currentError: Array<number> = [];
         let nextError: Array<number> = [];
@@ -275,6 +298,7 @@ export class BayerPaletteEffect implements PixelEffect {
     width = 250;
     height = 250;
     palette = new Array<Color>;
+    kind = EffectKind.BayerDither;
     constructor(title: string, width: number, height: number, palette: Array<number>) {
         this.width = width;
         this.height = height;
@@ -334,6 +358,7 @@ export class BayerColorPaletteEffect implements PixelEffect {
     height = 250;
     palette = new Array<Color>;
     levels = new Color(2, 2, 2);
+    kind = EffectKind.OrderedDither;
     constructor(title: string, width: number, height: number, palette: Array<number>, levels: Color) {
         this.title = title;
         this.width = width;
@@ -403,6 +428,7 @@ export class GrayDitherEffect implements PixelEffect {
     title = 'Gray Dither';
     width = 256;
     height = 256;
+    kind = EffectKind.FloydSteinbergDither;
     process(frame: ImageData, value: number) {
         let currentError: Array<number> = [];
         let nextError: Array<number> = [];
@@ -474,6 +500,7 @@ export class RGBDitherEffect implements PixelEffect {
     title = 'RGB Dither';
     width = 256;
     height = 256;
+    kind = EffectKind.FloydSteinbergDither;
     process(frame: ImageData, value: number) {
         let currentError: Array<Color> = [];
         let nextError: Array<Color> = [];
@@ -551,6 +578,7 @@ export class PaletteDitherEffect implements PixelEffect {
     title = 'Palette Dither';
     width = 256;
     height = 256;
+    kind = EffectKind.FloydSteinbergDither;
     palette: Array<Color> = [
         new Color(0, 0, 0),
         new Color(255, 255, 255),
@@ -641,6 +669,7 @@ export class PaletteStickiEffect implements PixelEffect {
     title = 'Palette Dither';
     width = 256;
     height = 256;
+    kind = EffectKind.StuckiDither;
     palette: Array<Color> = [
         new Color(0, 0, 0),
         new Color(255, 255, 255),

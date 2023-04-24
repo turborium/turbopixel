@@ -10,7 +10,7 @@ describe('SaveDialogComponent', () => {
         await TestBed.configureTestingModule({
             declarations: [SaveDialogComponent]
         })
-            .compileComponents();
+        .compileComponents();
 
         fixture = TestBed.createComponent(SaveDialogComponent);
         component = fixture.componentInstance;

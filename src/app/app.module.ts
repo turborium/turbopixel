@@ -21,6 +21,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AboutDialogComponent } from './about-dialog/about-dialog.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
         CameraErrorDialogComponent,
         BottomSheetEffects,
         SaveDialogComponent,
+        AboutDialogComponent,
     ],
     imports: [
         BrowserModule,

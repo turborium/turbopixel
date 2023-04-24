@@ -107,3 +107,31 @@ body {
     // WTF??????? WEB IS ABSOLYTELY BROKEN
     -webkit-user-select: text;
 }
+
+// gen:
+// png -> svg 
+// http://lapis.tech/PixelartToSVG/ (https://github.com/LapisTech/PixelartToSVG)
+// https://jerosoler.github.io/SvgPixelArt/
+// svg -> font
+// https://icomoon.io/app/#/select
+// https://docs.fluidproject.org/infusion/development/tutorial-iconfonts/howtocreateandusefonticons
+@font-face {
+    font-family: 'appicons';
+    src:  
+        url('/assets/appicons.ttf'),
+        url('/assets/appicons.woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.appicon {
+    font-family: 'appicons';
+}
+
+::ng-deep .app-dialog-container .mat-dialog-container {
+    padding: 0px;
+    margin: 0px;
+    width: 200px;
+    background-color: #ff3100;
+}

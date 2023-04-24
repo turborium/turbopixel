@@ -4,7 +4,10 @@
         <img src={{data.image}} style="width: 100%; margin-bottom: 8px;">
     </div>
     <!--mat-card style="overflow: auto;"-->
-    <button mat-button (click)="copyDescription()" [matTooltipDisabled]="true" matTooltip="Text Has Been Copied!"
+    <button mat-button 
+        (click)="copyDescription()" 
+        [matTooltipDisabled]="true" 
+        matTooltip="Text Has Been Copied!"
         #copyTooltip="matTooltip"
         style="width: 100%; overflow: hidden; padding: 4px; display: flex; align-items: center; justify-content: center; font-size: x-small; line-height: normal;">
         <div class="selectable">{{data.text}}<br>{{data.appLink}}</div>

@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>About</h1>
+<div mat-dialog-content  style="display: flex; flex-direction: column;">
+    <h4>Application Link</h4>
+    <div class="about-item">
+        <a mat-link class="about-link-item selectable" href="{{data.appLink}}" target="_blank">{{data.appLink}}</a>
+        <button mat-mini-fab 
+            (click)="copy(data.appLink, copyAppLinkTooltip)"
+            [matTooltipDisabled]="true" 
+            matTooltip="Link Has Been Copied!"
+            #copyAppLinkTooltip="matTooltip">
+                <mat-icon>content_copy</mat-icon>
+        </button>
+    </div> 
+    <h4>Author</h4>
+    <div class="about-item">
+        <a mat-link class="about-link-item selectable" href="{{data.socLink}}" target="_blank">@Turborium</a> 
+        <button mat-mini-fab 
+            (click)="copy(data.socLink, copySocLinkTooltip)"
+            [matTooltipDisabled]="true" 
+            matTooltip="Link Has Been Copied!"
+            #copySocLinkTooltip="matTooltip">
+                <mat-icon>content_copy</mat-icon>
+        </button>
+    </div>
+    <h4>Source Code</h4> 
+    <div class="about-item">
+        <a mat-link class="about-link-item selectable" href="{{data.repoLink}}" target="_blank">{{data.repoLink}}</a> 
+        <button mat-mini-fab 
+            (click)="copy(data.repoLink, copyRepoLinkTooltip)"
+            [matTooltipDisabled]="true" 
+            matTooltip="Link Has Been Copied!"
+            #copyRepoLinkTooltip="matTooltip">
+                <mat-icon>content_copy</mat-icon>
+        </button>
+    </div>
+    <h4>Support</h4>
+    <div *ngFor="let wallet of wallets" class="about-item selectable">
+        {{wallet.title}}:
+        <div class="wallet-id-item selectable">{{wallet.id}}</div>
+        <button mat-mini-fab 
+            (click)="copy(wallet.id, copyWalletTooltip)"
+            [matTooltipDisabled]="true" 
+            matTooltip="Wallet Has Been Copied!"
+            #copyWalletTooltip="matTooltip">
+                <mat-icon>content_copy</mat-icon>
+        </button>
+    </div>
+</div>
+<div mat-dialog-actions style="display: flex; justify-content: center">
+    <button mat-raised-button mat-dialog-close="">Close</button>
+</div>

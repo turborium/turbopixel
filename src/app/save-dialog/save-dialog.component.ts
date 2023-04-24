@@ -35,12 +35,12 @@ export class SaveDialogComponent {
 
     copyDescription() {
         navigator.clipboard.writeText(this.data.text + '\n' + this.data.appLink)
-            .then(() => {
-                this.copyTooltip.disabled = false;
-                this.copyTooltip.show()
-                setTimeout(() => {
-                    this.copyTooltip.disabled = true;
-                }, 1000);
-            });
+        .then(() => {
+            this.copyTooltip.disabled = false;
+            this.copyTooltip.show()
+            setTimeout(() => {
+                this.copyTooltip.disabled = true;
+            }, 1000);
+        });
     }
 }

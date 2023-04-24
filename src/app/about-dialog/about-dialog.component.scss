@@ -1,0 +1,21 @@
+.about-item {
+    display: flex;     
+    align-items: center;
+    //justify-content: center;
+    //text-align: center;
+    flex-shrink: 100;
+    margin-bottom: 8px; 
+}
+ 
+.about-link-item {
+    color: gold;// HOW TO SET EBANIY ACCENT COLOR??????????????????????? FUCK
+    word-break: break-all;
+    margin-right: 8px;
+}
+
+.wallet-id-item {
+    flex-shrink: 100; 
+    overflow: auto; 
+    margin-left: 8px; 
+    margin-right: 8px;
+}

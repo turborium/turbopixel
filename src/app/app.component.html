@@ -3,11 +3,8 @@
     <div class="app-header">
         <mat-toolbar color="primary" style="position: relative;">
             <button mat-button
-                (click)="clickCopyLinkToApp()" 
-                [matTooltipDisabled]="true" 
-                matTooltip="Link To App Has Been Copied!"
-                #copyLinkToAppTooltip="matTooltip"
-                style="position: absolute; left: 8px; font-size: small;">Copy App Link</button>
+                (click)="clickAbout()" 
+                style="position: absolute; left: 8px; font-size: small;">About</button>
             <div class="app-toolbar-center">
                 #{{title}}
             </div>
@@ -36,7 +33,7 @@
                     <mat-icon aria-label="Before" fontIcon="navigate_before"></mat-icon>
                 </button>
                 <button mat-stroked-button style="flex-grow: 1; min-width: 10px;" [disabled]="state != State.Work"
-                    (click)="clickOpenBottomSheetEffect()">{{this.effects[this.selectedEffect].title}}</button>
+                    (click)="clickOpenBottomSheetEffect()"><span class="appicon">{{effectIcon(this.effects[this.selectedEffect])}} </span>{{this.effects[this.selectedEffect].title}}</button>
                 <button mat-stroked-button [disabled]="state != State.Work" (click)="clickNextEffect()">
                     <mat-icon aria-label="Next" fontIcon="navigate_next"></mat-icon>
                 </button>
