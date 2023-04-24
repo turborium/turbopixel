@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "name": "123",
+    "lastOpened": 0,
+    "created": 1682284095975
+  },
+  "iconSets": [
+    {
+      "selection": [
+        {
+          "order": 8,
+          "id": 4,
+          "name": "dither-1",
+          "prevSize": 32,
+          "code": 49,
+          "tempChar": ""
+        },
+        {
+          "order": 9,
+          "id": 3,
+          "name": "dither-2",
+          "prevSize": 32,
+          "code": 50,
+          "tempChar": ""
+        },
+        {
+          "order": 10,
+          "id": 2,
+          "name": "dither-3",
+          "prevSize": 32,
+          "code": 51,
+          "tempChar": ""
+        },
+        {
+          "order": 11,
+          "id": 1,
+          "name": "dither-4",
+          "prevSize": 32,
+          "code": 52,
+          "tempChar": ""
+        },
+        {
+          "order": 12,
+          "id": 0,
+          "name": "dither-5",
+          "prevSize": 32,
+          "code": 53,
+          "tempChar": ""
+        }
+      ],
+      "id": 0,
+      "metadata": {
+        "name": "Untitled Set",
+        "importSize": {
+          "width": 16,
+          "height": 16
+        }
+      },
+      "height": 1024,
+      "prevSize": 32,
+      "icons": [
+        {
+          "id": 4,
+          "paths": [
+            "M0 0h1024v1024h-1024zM960 64h-896v896h896zM192 192h128v128h128v128h-128v128h-128v-128h128v-128h-128zM448 192h128v128h128v128h-128v-128h-128zM704 192h128v128h-128zM448 448h128v128h-128v128h-128v-128h128zM704 448h128v128h-128zM576 576h128v128h-128zM192 704h128v128h-128zM448 704h128v128h-128zM704 704h128v128h-128z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 0,
+          "tags": [
+            "dither-1"
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "paths": [
+            "M0 0h1024v1024h-1024zM960 64h-896v896h896zM704 192h128v128h-128v128h-128v-128h128zM448 448h128v128h128v128h-128v-128h-128zM704 448h128v128h-128zM320 576h128v128h128v128h-128v-128h-128zM192 704h128v128h-128zM704 704h128v128h-128z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 0,
+          "tags": [
+            "dither-2"
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "paths": [
+            "M0 0h1024v1024h-1024zM960 64h-896v896h896zM192 192h128v128h-128zM448 192h128v128h-128zM704 192h128v128h-128zM320 448h128v128h-128zM576 448h128v128h-128zM192 704h128v128h-128zM448 704h128v128h-128zM704 704h128v128h-128z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 0,
+          "tags": [
+            "dither-3"
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "paths": [
+            "M0 0h1024v1024h-1024zM960 64h-896v896h896zM192 192h128v128h128v128h-128v-128h-128zM448 192h128v128h-128zM576 320h128v128h-128zM320 576h128v128h-128zM576 576h128v128h-128zM448 704h128v128h-128zM704 704h128v128h-128z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 0,
+          "tags": [
+            "dither-4"
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
+        },
+        {
+          "id": 0,
+          "paths": [
+            "M0 0h1024v1024h-1024zM960 64h-896v896h896zM448 192h128v128h-128v128h-128v-128h128zM576 320h128v128h-128zM192 448h128v128h-128zM704 448h128v128h-128zM320 576h128v128h-128zM576 576h128v128h-128zM448 704h128v128h-128z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 0,
+          "tags": [
+            "dither-5"
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
+        }
+      ],
+      "invisible": false,
+      "colorThemes": [
+        [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            255,
+            255,
+            255,
+            1
+          ]
+        ]
+      ],
+      "colorThemeIdx": 0
+    }
+  ],
+  "uid": -1,
+  "preferences": {
+    "showGlyphs": true,
+    "showCodes": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon"
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false,
+      "autoHost": true
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215
+    },
+    "historySize": 50,
+    "gridSize": 16,
+    "quickUsageToken": {
+      "123": "Y2YwNWJkYTM3YjNiOTE5ODQ0MzE5NDY2OGZmNjI4MGYjMSMxNjgyMjg0NjQwIyMjMWViYjAzNTU2YjAx"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "configVersion": 1,
+  "timestamp": 1682303388009,
+  "index": "https://turborium.github.io/turbopixel/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://turborium.github.io/turbopixel/favicon.ico",
+        "https://turborium.github.io/turbopixel/index.html",
+        "https://turborium.github.io/turbopixel/main.5b87265d2c18867b.js",
+        "https://turborium.github.io/turbopixel/manifest.webmanifest",
+        "https://turborium.github.io/turbopixel/polyfills.bd06f87987d96d39.js",
+        "https://turborium.github.io/turbopixel/runtime.364c99f51eb11600.js",
+        "https://turborium.github.io/turbopixel/styles.a0dc64fe8607e1cb.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://turborium.github.io/turbopixel/assets/appicons.ttf",
+        "https://turborium.github.io/turbopixel/assets/appicons.woff",
+        "https://turborium.github.io/turbopixel/assets/dither-1.png",
+        "https://turborium.github.io/turbopixel/assets/dither-1.svg",
+        "https://turborium.github.io/turbopixel/assets/dither-2.png",
+        "https://turborium.github.io/turbopixel/assets/dither-2.svg",
+        "https://turborium.github.io/turbopixel/assets/dither-3.png",
+        "https://turborium.github.io/turbopixel/assets/dither-3.svg",
+        "https://turborium.github.io/turbopixel/assets/dither-4.png",
+        "https://turborium.github.io/turbopixel/assets/dither-4.svg",
+        "https://turborium.github.io/turbopixel/assets/dither-5.png",
+        "https://turborium.github.io/turbopixel/assets/dither-5.svg",
+        "https://turborium.github.io/turbopixel/assets/icomoon.json",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-128x128.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-144x144.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-152x152.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-192x192.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-384x384.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-512x512.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-72x72-bw.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-72x72-color.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-72x72.png",
+        "https://turborium.github.io/turbopixel/assets/icons/icon-96x96.png",
+        "https://turborium.github.io/turbopixel/assets/watermark.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://turborium.github.io/turbopixel/assets/appicons.ttf": "402a417b711c460f64a458308057ab76b283ec92",
+    "https://turborium.github.io/turbopixel/assets/appicons.woff": "ea07343607e72e4bb48075ee47e10970bed04ec0",
+    "https://turborium.github.io/turbopixel/assets/dither-1.png": "55351ec864c628750a4dee2ba9e7b58c02eaf18e",
+    "https://turborium.github.io/turbopixel/assets/dither-1.svg": "2a4ae971e2d18a7b0e189d817332c2d5bd88b7d9",
+    "https://turborium.github.io/turbopixel/assets/dither-2.png": "6a84cd536d528b8dda440de0a6e93ab89a819c93",
+    "https://turborium.github.io/turbopixel/assets/dither-2.svg": "bb72d112151b62c6233d2ce842445abd007434b4",
+    "https://turborium.github.io/turbopixel/assets/dither-3.png": "95927d90a6ccc6b30662b8d5e1d04e5bc87fa615",
+    "https://turborium.github.io/turbopixel/assets/dither-3.svg": "91034474363f2c1e85b98be431615b701f12049f",
+    "https://turborium.github.io/turbopixel/assets/dither-4.png": "5d6838f4c8144d3b27555c9670c60c7270527b56",
+    "https://turborium.github.io/turbopixel/assets/dither-4.svg": "90c8baf069d9c634822e2720690b2e304cdc0c3b",
+    "https://turborium.github.io/turbopixel/assets/dither-5.png": "2cfb5932f8ec844d17680c978deb5c17157d5dbc",
+    "https://turborium.github.io/turbopixel/assets/dither-5.svg": "a89923ff6770001846352422be12138f5c4767c0",
+    "https://turborium.github.io/turbopixel/assets/icomoon.json": "9c24fa5952d7a547f42d7e270f846c0941b2ea0f",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-128x128.png": "d68cb3c556198c21312c99360ec99da6168d2276",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-144x144.png": "c87120eec5ed6967fabec7fd3f8e20f3595763ad",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-152x152.png": "2f2a1743a5a062eeb98aaa30602d492e6fc641ab",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-192x192.png": "6b2153921a085bf5d6e88eae199ccbf232ec2af9",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-384x384.png": "b9b6cdfa203f618130fea3b2bcfa6c34253c5f6a",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-512x512.png": "835d24d9e688e1afdc674a6dbd0f3ac768d0c53a",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-72x72-bw.png": "1abedfd57d3cdcaded1375dd5b2836c0e42f4751",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-72x72-color.png": "5a802677e64a13aeb02467e45e5d039b5ca79cec",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-72x72.png": "1abedfd57d3cdcaded1375dd5b2836c0e42f4751",
+    "https://turborium.github.io/turbopixel/assets/icons/icon-96x96.png": "6e6acdde0540c9b796506dd675934e0ba4d3ef32",
+    "https://turborium.github.io/turbopixel/assets/watermark.png": "9664fb60d0c57e8bcc7ebd6dd3634ed73ea34fa3",
+    "https://turborium.github.io/turbopixel/favicon.ico": "0a89d0023ba1115ade1fe1931859fff78d1bc54e",
+    "https://turborium.github.io/turbopixel/index.html": "8de2847b31044e494443557dd6f7c690c6719638",
+    "https://turborium.github.io/turbopixel/main.5b87265d2c18867b.js": "f3555ce8f6e6a341ecd3a06a418790ab20861fee",
+    "https://turborium.github.io/turbopixel/manifest.webmanifest": "f2b66c67a2749dd24c69749667a859e0c4e850ca",
+    "https://turborium.github.io/turbopixel/polyfills.bd06f87987d96d39.js": "8b7a71a8ce0d38430660a3d44ae01959c52316b0",
+    "https://turborium.github.io/turbopixel/runtime.364c99f51eb11600.js": "497764c39425a7a36019b2153946e29eadf68e57",
+    "https://turborium.github.io/turbopixel/styles.a0dc64fe8607e1cb.css": "c4a571a2fa289dac531021286241ac89ebfb2ebe"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
