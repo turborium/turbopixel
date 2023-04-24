@@ -63,3 +63,7 @@ add this to "package.json":
 use for running
 `npm run start-pwa` 
 `ngrok http 8086 --host-header="localhost:8080"`
+
+## deploy
+ng add angular-cli-ghpages  
+ng deploy --base-href=https://turborium.github.io/turbopixel/
