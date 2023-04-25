@@ -23,7 +23,7 @@ import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatTooltip } from '@angular/material/tooltip';
 
-import { SaveDialogComponent, SaveDialogResult } from './save-dialog/save-dialog.component';
+import { SaveDialogComponent, SaveDialogResult, SaveDialogData } from './save-dialog/save-dialog.component';
 import { CameraErrorDialogComponent, CameraErrorDialogResult } from './camera-error-dialog/camera-error-dialog.component';
 import { AboutDialogComponent } from './about-dialog/about-dialog.component';
 
@@ -142,32 +142,27 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     clickTakePhoto() {
         // upscale
         let tempCanvas = document.createElement('canvas');
-        tempCanvas.width = this.cachedCanvas.width * 3;
-        tempCanvas.height = this.cachedCanvas.height * 3;
+        tempCanvas.width = this.cachedCanvas.width * 4;
+        tempCanvas.height = this.cachedCanvas.height * 4;
         tempCanvas.getContext("2d")!.imageSmoothingEnabled = false;
         tempCanvas.getContext("2d")!.drawImage(
             this.cachedCanvas, 0, 0, tempCanvas.width, tempCanvas.height);
 
         // get image and name
         const dataUrl = tempCanvas.toDataURL('image/png');
-        const fileName = 'Pixel_' + Date.now().toString() + '.png';
-        const shareText = '#TurboPixel with \"' +
-            // wow MEGA CLEAN CODE
-            (this.effects[this.selectedEffect].title.startsWith(' ', 1) ?
-                this.effects[this.selectedEffect].title.substring(2) :
-                this.effects[this.selectedEffect].title) +
-            '\" palette';
+        let fileName = 'TurboPixel ' + new Date(Date.now()).toLocaleString('fi-FI', {dateStyle: "short", timeStyle: "medium"}) + '.png';
+        const shareText = '#TurboPixel with \"' + this.effects[this.selectedEffect].title + '" palette' + '\n' + this.appLink;
 
         // save dialog
         const dialogRef = this.dialog.open(SaveDialogComponent, {
             disableClose: false,
             maxWidth: "96vw",
-            maxHeight: "96vh",
+            maxHeight: "90vh",
             data: {
-                image: dataUrl,
-                text: shareText,
-                appLink: this.appLink
-            }
+                imageUrl: dataUrl,
+                fileName: fileName,
+                description: shareText,
+            } as SaveDialogData
         });
 
         // camera off
@@ -175,78 +170,20 @@ export class AppComponent implements AfterViewInit, OnDestroy {
             this.cameraStop();
         });
 
-        // save
-        // wow! this is realy-cool code :))
-        dialogRef.afterClosed().subscribe(async (result) => {
-            try {
-                if (result == SaveDialogResult.Download) {
-                    // save to file
-                    let link = document.createElement('a');
-                    link.download = fileName;
-                    link.href = dataUrl;
-                    link.click();
-                }
-                else if (result == SaveDialogResult.Share) {
-                    // save to share
-                    let response = await fetch(dataUrl);
-                    let blob = await response.blob();
-                    let file = new File([blob], fileName, {
-                        type: blob.type,
-                        lastModified: new Date().getTime(),
-                    });
-                    navigator.share({
-                        files: [file],
-                    });
-                }
-                else if (result == SaveDialogResult.Copy) {
-                    // save to clipboard
-                    if (navigator.userAgent.toLowerCase().includes('chrome')) {
-                        // good, but not work in safari
-                        let response = await fetch(dataUrl);
-                        let blob = await response.blob();
-                        let item = new ClipboardItem({ 'image/png': blob });
-                        navigator.clipboard.write([item]);
-                    } else if (navigator.userAgent.toLowerCase().includes('safari')) {
-                        // for ios
-                        let makeImagePromise = async () => {
-                            let response = await fetch(dataUrl);
-                            return await response.blob();
-                        }
-                        navigator.clipboard.write([
-                            new ClipboardItem({
-                                "image/png": makeImagePromise(),
-                            }),
-                        ]);
-                    } else {
-                        // bad code
-                        let image = document.createElement('img');
-                        image.src = dataUrl;
-                        let div = document.createElement('div');
-                        div.contentEditable = 'true';
-                        div.appendChild(image);
-                        document.body.appendChild(div);
-                        try {
-                            div.focus();
-                            window.getSelection()!.selectAllChildren(div);
-                            document.execCommand('Copy');// HACK
-                        }
-                        finally {
-                            document.body.removeChild(div);
-                        }
-                    }
-                }
-            }
-            catch (error) {
-                // wtf???
-                console.log(error);
-            }
-            finally {
-                // camera on
-                this.cameraStart(CameraType.Current);
-            }
+        // camer on
+        dialogRef.afterClosed().subscribe(() => {
+            this.cameraStart(CameraType.Current);
         });
     }
 
+    // <random>
+    clickRandom() {
+
+        this.changeEffect(Math.floor(Math.random() * this.effects.length));
+        this.effectValue = 0.1 + Math.random() * 0.8; 
+    }
+
+    // <about>
     clickAbout() {
         // NOT WORK???
         // https://stackoverflow.com/questions/45928423/get-rid-of-white-space-around-angular-material-modal-dialog
@@ -317,6 +254,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     }
 
     cameraStop() {
+        this.canvas.nativeElement.getContext('2d')?.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
         clearInterval(this.timer);
         this.hasFrame = false;
         this.state = State.Paused;

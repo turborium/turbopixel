@@ -396,6 +396,27 @@ export const effects: Array<PixelEffect> = [
         ]
     ),
     // -------------------------------------------------------------------
+    new BayerDitheringEffect(
+        'Green Tree',
+       240,
+       240,
+       [
+            0xFF1d4010,
+            0xFF358879,
+            0xFF46a65c,
+            0xFF56c157,
+            0xFFbeed84,
+            0xFFe9fcaf,
+            0xFFfffff0,
+            0xFFf38760,
+            0xFFcd3647,
+            0xFF811c4e,
+            0xFF6e2c1a,
+            0xFF100605,
+       ],
+       new Color(4, 2, 4)
+    ),
+    // -------------------------------------------------------------------
     new PaletteDitherEffect(
         300,
         300,
@@ -582,6 +603,31 @@ export const effects: Array<PixelEffect> = [
     // -------------------------------------------------------------------
     new ChornobylEffect('Chornobyl'),
     // -------------------------------------------------------------------
+    new BayerDitheringEffect(
+        'Evening Forest',
+        240,
+        240,
+        [
+            0xFF0f0012,
+            0xFF004f3f,
+            0xFF009e4a,
+            0xFF1cba33,
+            0xFFFFFFEA,
+            0xFFffed87,
+            0xFF330033,
+            0xFFb3122d,
+            0xFFcc2929,
+            0xFFe6653a,
+            //0xFFffbb5c,
+            0xFF330066,
+            0xFF1a0099,
+            0xFF1433cc,
+            0xFF30d2f2,
+            0xFF4cffb4,
+        ],
+        new Color(5, 4, 4)
+    ),
+    // -------------------------------------------------------------------
     new StuckiDitheringEffect(
         'Oil Stucki',
         256,
@@ -685,6 +731,20 @@ export const effects: Array<PixelEffect> = [
             0xFFe8b796,
             0xFFc28569,
         ],
+    ),
+    // -------------------------------------------------------------------
+    new BayerPowerDitheringEffect(
+        'Lotty',
+        200,
+        200,
+        [
+            0xFF260d34,  
+            0xFF452459,   
+            0xFF87286a,
+            0xFFd03791,
+            0xFFfe6c90,
+            0xFFffffff,
+        ]
     ),
     // -------------------------------------------------------------------  
     new BayerDitheringEffect(
@@ -995,6 +1055,26 @@ export const effects: Array<PixelEffect> = [
         new Color(4, 4, 6)
     ),
     // -------------------------------------------------------------------
+    new StuckiDitheringEffect(
+        'Control Cherry',
+        200,
+        200,
+        [
+            0xFFEED5EE,
+            0xFF54cea7,
+            0xFF2ba4a6,
+            0xFF0c6987,
+            0xFF054b84,
+            0xFF0d2147,
+            0xFFffb0bf,
+            0xFFff82bd,
+            0xFFd74ac7,
+            0xFFa825ba,
+            0xFF682b9c,
+            0xFF050010,
+        ],
+    ),
+    // -------------------------------------------------------------------
     new BayerPowerDitheringEffect(
         'Suggar World',
         180,
@@ -1131,6 +1211,39 @@ export const effects: Array<PixelEffect> = [
         new Color(4, 3, 4)
     ),
     // -------------------------------------------------------------------
+    new BayerDitheringEffect(
+        'Crazy Santa',
+        300,
+        300,
+        [
+            0xFF1a0d0f,
+            0xFF331416,
+            0xFF4d1717,
+            0xFF73201d,
+            0xFF8c2a23,
+            0xFFa63229,
+            0xFFcc4733,
+            0xFFe56545,
+            0xFFf28861,
+            0xFFf2aa85,
+            0xFFf2ceb6,
+            0xFFffffff,
+            0xFFd8f2c2,
+            0xFFb8f291,
+            0xFF98d977,
+            0xFF7acc5c,
+            0xFF5db347,
+            0xFF50993d,
+            0xFF3a802d,
+            0xFF2f6624,
+            0xFF234d1b,
+            0xFF1f401a,
+            0xFF1b3317,
+            0xFF162613,
+        ],
+        new Color(10, 10, 2)
+    ),
+    // -------------------------------------------------------------------
     new PaletteDitherEffect(
         230,
         230,
@@ -1140,6 +1253,22 @@ export const effects: Array<PixelEffect> = [
             0xFFFF0000,
             0xFFFFFFFF,
         ]
+    ),
+    // -------------------------------------------------------------------
+    new BayerDitheringEffect(
+        'Small Town',
+        256,
+        256,
+        [
+            0xFF050010,
+            0xFF17283c,
+            0xFF7d6fb8,
+            0xFFc986f6,
+            0xFFf9c4ad,
+            0xFFfef6f2,
+            0xFFf6623e,
+        ],
+        new Color(8, 8, 8)
     ),
     // -------------------------------------------------------------------
     new StuckiDitheringEffect(

@@ -70,3 +70,6 @@ ng deploy --base-href=https://turborium.github.io/turbopixel/
 
 ## manual 
 ng build --base-href https://turborium.github.io/turbopixel/
+
+##
+https://kuros.in/ci/cd/use-private-repo-to-publish-website-with-github-pages/

@@ -46,12 +46,15 @@
                 </mat-slider>
             </mat-toolbar-row>
             <!-- buttons -->
-            <mat-toolbar-row class="app-toolbar-center" style="grid-template-columns: 1fr repeat(1, auto) 1fr">
-                <button mat-mini-fab [disabled]="state != State.Work" (click)="clickNextCamera()">
+            <mat-toolbar-row class="app-toolbar-center" style="grid-template-columns: 1fr repeat(1, auto) 1fr;">
+                <button mat-mini-fab [disabled]="state != State.Work" (click)="clickNextCamera()" style="justify-self: start;">
                     <mat-icon>cameraswitch</mat-icon>
                 </button>
                 <button mat-fab [disabled]="state != State.Work || !hasFrame" color="warn" (click)="clickTakePhoto()">
                     <mat-icon>photo_camera</mat-icon>
+                </button>
+                <button mat-mini-fab [disabled]="state != State.Work" (click)="clickRandom()" style="justify-self: end;">
+                    <mat-icon>auto_mode</mat-icon>
                 </button>
             </mat-toolbar-row>
             <!-- fix bottom -->
