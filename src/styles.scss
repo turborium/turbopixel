@@ -81,6 +81,7 @@ html {
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 body {
@@ -90,14 +91,21 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* iOS pwa disable scroll, see app component 
+    /*
+    iOS pwa disable scroll, see app component 
     https://stackoverflow.com/questions/59193062/how-to-disable-scrolling-on-body-in-ios-13-safari-when-saved-as-pwa-to-the-home
     */
     position: fixed;
+    /*
+    iOS font size-issue
+    https://stackoverflow.com/questions/5303263/fix-font-size-issue-on-mobile-safari-iphone-where-text-is-rendered-inconsisten
+    */
+    -webkit-text-size-adjust: 100%;
 }
 
 * {
     user-select: none;
+    //-webkit-text-size-adjust: 100%;
 }
 
 .selectable {
@@ -107,7 +115,7 @@ body {
     // WTF??????? WEB IS ABSOLYTELY BROKEN
     -webkit-user-select: text;
 }
-
+ 
 // gen:
 // png -> svg 
 // http://lapis.tech/PixelartToSVG/ (https://github.com/LapisTech/PixelartToSVG)

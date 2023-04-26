@@ -154,10 +154,13 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         const shareText = '#TurboPixel with \"' + this.effects[this.selectedEffect].title + '" palette' + '\n' + this.appLink;
 
         // save dialog
+        // https://stackoverflow.com/questions/68094609/ios-15-safari-floating-address-bar
         const dialogRef = this.dialog.open(SaveDialogComponent, {
             disableClose: false,
-            maxWidth: "96vw",
-            maxHeight: "90vh",
+            maxWidth: "calc(94 * var(--safe-width))",
+            maxHeight: "calc(90 * var(--safe-height))",
+            // minWidth: "calc(50 * var(--safe-width))",
+            // minHeight: "calc(60 * var(--safe-height))",
             data: {
                 imageUrl: dataUrl,
                 fileName: fileName,
@@ -191,7 +194,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         const dialogRef = this.dialog.open(AboutDialogComponent, {
             disableClose: false,
             //panelClass: 'app-dialog-container',
-            maxWidth: "96vw",
+            maxWidth: "calc(94 * var(--safe-width))",
+            maxHeight: "calc(90 * var(--safe-height))",
             data: {
                 appLink: this.appLink,
                 repoLink: this.repoLink,
@@ -386,7 +390,22 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         });
         this.contentwrapperResizeObserver.observe(this.contentwrapper.nativeElement);
 
-        // calc max size
+        // mat-dialog overlapped by browser toolbar on mobile
+        // let var with real max w/h
+        // https://dev.to/maciejtrzcinski/100vh-problem-with-ios-safari-3ge9
+        // https://gist.github.com/getify/150ea5a3b30b8822dee7798883d120b9
+        // this is a dirty solution, in the future you need to use this:
+        // https://www.w3.org/TR/css-values-4/#viewport-relative-lengths
+        // https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/
+        // https://webkit.org/blog/12445/new-webkit-features-in-safari-15-4/
+        let windowResizeListener = () => {
+            document.documentElement.style.setProperty('--safe-width', (document.documentElement.clientWidth / 100).toString() + 'px');
+            document.documentElement.style.setProperty('--safe-height', (document.documentElement.clientHeight / 100).toString() + 'px');
+        }
+        window.addEventListener('resize', windowResizeListener);
+        windowResizeListener();
+
+        // calc max effect size
         for (let effect of this.effects) {
             if (effect.width > this.effectMaxWidth)
                 this.effectMaxWidth = effect.width;
