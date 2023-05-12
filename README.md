@@ -1,6 +1,12 @@
 # TurboPixel
 TurboPixel Angular PWA Application
 
+![1](doc/1.PNG)  
+![2](doc/2.PNG)  
+![3](doc/3.PNG) 
+
+### Check this: https://turborium.github.io/turbopixel/
+
 # License
 TurboPixel licensed under Apache 2.0 license, see LICENSE.  
 Part of files licensed under MPL1.1, see license notice in each of file.  
