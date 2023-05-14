@@ -1,6 +1,10 @@
 # TurboPixel
 TurboPixel Angular PWA Application
 
+TurboPixel is PWA Application for creating amazing PixelArt-like photos.  
+Over 30 effects, advanced settings and export formats.  
+Enjoy!  
+
 # [GDD](https://github.com/turborium/GDD) G-Code Driven Development  
 
 ![1](doc/1.PNG)  
