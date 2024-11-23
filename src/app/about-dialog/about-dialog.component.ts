@@ -23,7 +23,7 @@ export class AboutDialogComponent {
         },
         {
             title: 'USDT(Tron)',
-            id: 'TGSu6UFJBzkgYfs74S9HowrqwDSetRq34W',
+            id: 'THTgGxMZuYFX5g2Za8RNP6LEk5WsiXAhSo',
         },
         {
             title: 'BNB',
